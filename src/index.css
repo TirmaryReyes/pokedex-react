@@ -2,28 +2,28 @@
 
 :root{
     --color-fire: #ff7402;
-	--color-grass: #9bcc50;
-	--color-steel: #9eb7b8;
-	--color-water: #4592c4;
-	--color-psychic: #f366b9;
-	--color-ground: #ab9842;
-	--color-ice: #51c4e7;
-	--color-flying: #3dc7ef;
-	--color-ghost: #4d5b64;
-	--color-normal: #a4acaf;
-	--color-poison: #7e0058;
-	--color-rock: #a38c21;
-	--color-fighting: #d56723;
-	--color-dark: #707070;
-	--color-bug: #729f3f;
-	--color-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
-	--color-electric: #bba909;
-	--color-fairy: #fdb9e9;
-	--color-shadow: #7b62a3;
-	--color-unknow: #757575;
+    --color-grass: #9bcc50;
+    --color-steel: #9eb7b8;
+    --color-water: #4592c4;
+    --color-psychic: #f366b9;
+    --color-ground: #ab9842;
+    --color-ice: #51c4e7;
+    --color-flying: #3dc7ef;
+    --color-ghost: #4d5b64;
+    --color-normal: #a4acaf;
+    --color-poison: #7e0058;
+    --color-rock: #a38c21;
+    --color-fighting: #d56723;
+    --color-dark: #707070;
+    --color-bug: #729f3f;
+    --color-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+    --color-electric: #bba909;
+    --color-fairy: #fdb9e9;
+    --color-shadow: #7b62a3;
+    --color-unknow: #757575;
 
-	--color-primary: #FF0878;
-	--color-primary-hover:#FF469A;
+    --color-primary: #FF0878;
+    --color-primary-hover:#FF469A;
 }
 
 *{
@@ -34,12 +34,14 @@
 
 body{
     font-family: 'Montserrat';
+    padding-top: 20px;
 }
 
 /* Globales */
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* header */
@@ -48,7 +50,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 40px 0;
 }
 
@@ -59,7 +60,6 @@ header{
 header form{
     display: flex;
     align-items: center;
-
     gap: 15px;
 }
 
@@ -67,7 +67,6 @@ header form{
     display: flex;
     align-items: center;
     gap: 10px;
-
     border: 1px solid #555;
     padding: 15px 20px;
     border-radius: 25px;
@@ -80,7 +79,6 @@ header form{
     outline: none;
     font-size: 15px;
 }
-
 
 .icon-search{
     width: 20px;
@@ -114,7 +112,6 @@ header form{
     display: flex;
     align-items: center;
     gap: 15px;
-
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -126,131 +123,162 @@ header form{
 }
 
 /* Card List Pokemon */
-.card-list-pokemon{
+.card-list-pokemon {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 
 .card-pokemon {
     cursor: pointer;
     text-decoration: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
 }
 
-.card-img{
+.card-img {
     background-color: #f2f2f2;
-
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
-    height: 250px;
+    height: 200px;
     width: 100%;
+    overflow: hidden;
 }
 
-.card-img img{
+.card-img img {
     width: 100%;
     height: auto;
+    max-height: 200px;
 }
 
-.card-info{
+.card-info {
     padding: 15px;
 }
 
-.card-info h3{
+.card-info h3 {
     color: #333;
+    margin: 10px 0;
 }
 
-.pokemon-id{
+.pokemon-id {
     display: block;
     color: #888;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-.card-types{
+.card-types {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
 
-.card-types span{
+.card-types span {
     font-size: 12px;
-    padding: 5px 20px;
+    padding: 5px 10px;
     border-radius: 5px;
     color: #fff;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-group input {
+        width: 200px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    header form {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container-filters {
+        width: 80%;
+        left: -80%;
+    }
+
+    .container-filters.active {
+        left: 0;
+    }
+}
+
 /* Types of Pokemon */
 .water {
-	background-color: var(--color-water);
+    background-color: var(--color-water);
 }
 
 .grass {
-	background-color: var(--color-grass);
+    background-color: var(--color-grass);
 }
 
 .poison {
-	background-color: var(--color-poison);
+    background-color: var(--color-poison);
 }
 
 .fire {
-	background-color: var(--color-fire);
+    background-color: var(--color-fire);
 }
 
 .bug {
-	background-color: var(--color-bug);
+    background-color: var(--color-bug);
 }
 
 .dragon {
-	background: var(--color-dragon);
+    background: var(--color-dragon);
 }
 
 .flying {
-	background-color: var(--color-flying);
+    background-color: var(--color-flying);
 }
 
 .ground {
-	background-color: var(--color-ground);
+    background-color: var(--color-ground);
 }
 
 .steel {
-	background-color: var(--color-steel);
+    background-color: var(--color-steel);
 }
 
 .psychic {
-	background-color: var(--color-psychic);
+    background-color: var(--color-psychic);
 }
 
 .ice {
-	background-color: var(--color-ice);
+    background-color: var(--color-ice);
 }
 
 .ghost {
-	background-color: var(--color-ghost);
+    background-color: var(--color-ghost);
 }
 
 .normal {
-	background-color: var(--color-normal);
+    background-color: var(--color-normal);
 }
 
 .rock {
-	background-color: var(--color-rock);
+    background-color: var(--color-rock);
 }
 
 .electric {
-	background-color: var(--color-electric);
+    background-color: var(--color-electric);
 }
 
 .fighting {
-	background-color: var(--color-fighting);
+    background-color: var(--color-fighting);
 }
 
 .fairy {
-	background-color: var(--color-fairy);
+    background-color: var(--color-fairy);
 }
 
 .dark {
-	background-color: var(--color-dark);
+    background-color: var(--color-dark);
 }
 
 /* Container Filters */
@@ -269,7 +297,7 @@ header form{
     z-index: 1000; /* Asegurar que esté sobre el contenido */
 }
 
-.container-filters.active{
+.container-filters.active {
     left: 0;
 }
 
@@ -288,26 +316,24 @@ header form{
     display: block;
 }
 
-.filter-by-type{
+.filter-by-type {
     display: flex;
     flex-direction: column;
-
     gap: 20px;
 }
 
-.filter-by-type span{
+.filter-by-type span {
     font-weight: 700;
     font-size: 22px;
 }
 
-.group-type{
+.group-type {
     display: flex;
     gap: 10px;
-
     margin-left: 15px ;
 }
 
-.group-type label{
+.group-type label {
     cursor: pointer;
 }
 
@@ -317,94 +343,87 @@ Styles of Pokemon Single Page
 ======================================= 
 */
 
-.main-pokemon{
+.main-pokemon {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
 }
 
-.header-main-pokemon{
+.header-main-pokemon {
     margin-top: 20px;
-
     display: flex;
     align-items: center;
-
     position: relative;
 }
 
-.number-pokemon{
+.number-pokemon {
     position: absolute;
     top: -70px;
     left: 0;
-
     font-size: 300px;
     font-weight: 700;
     color: var(--color-primary-hover);
 }
 
-.container-img-pokemon{
+.container-img-pokemon {
     order: 2;
     flex: 1;
     padding: 25px 25px 25px 0;
 }
 
-.container-img-pokemon img{
+.container-img-pokemon img {
     width: 100%;
 }
 
-.container-info-pokemon{
+.container-info-pokemon {
     display: flex;
     flex-direction: column;
-
     order: 1;
     flex: 1;
 }
 
-.container-info-pokemon h1{
+.container-info-pokemon h1 {
     text-align: right;
     font-size: 50px;
-
-
 }
 
-.info-pokemon{
+.info-pokemon {
     display: flex;
     justify-content: space-between;
-
     margin-top: 20px;
 }
 
-.group-info p{
+.group-info p {
     font-weight: 700;
 }
 
 /* Stats */
-.container-stats{
+.container-stats {
     display: flex;
     gap: 50px;
     align-items: center;
 }
 
-.stats{
+.stats {
     display: flex;
     flex-direction: column;
     gap: 20px;
     flex: 1;
 }
 
-.stat-group{
+.stat-group {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.stat-group span{
+.stat-group span {
     flex: 20%;
     font-weight: 500;
     font-size: 18px;
 }
 
-.progress-bar{
+.progress-bar {
     width: 100%;
     height: 30px;
     background-color: var(--color-primary);
