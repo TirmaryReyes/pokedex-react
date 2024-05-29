@@ -1,11 +1,3 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
 
-interface PokemonContextType {
-  number: number;
-  setNumber: Dispatch<SetStateAction<number>>;
-}
-
-export const PokemonContext = React.createContext<PokemonContextType>({
-  number: 0,
-  setNumber: () => {},
-});
+export const PokemonContext = createContext({});
